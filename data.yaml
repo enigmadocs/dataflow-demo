@@ -2,7 +2,7 @@ extract:
   - step: 1. Download CSV file
     action: extract.source.http.DownloadFiles
     fetch:
-      - "https://raw.githubusercontent.com/enigmadocs/download-csv/master/2016.csv"
+      - "https://raw.githubusercontent.com/enigmadocs/dataflow-demo/master/input.csv"
 
   - step: Print record to console
     action: debug.LogValues
@@ -36,3 +36,6 @@ transform:
   - step: Print record to console
     action: debug.LogValues
 
+  - step: Save locally
+    action: load.OutputCSV
+    repository: .
